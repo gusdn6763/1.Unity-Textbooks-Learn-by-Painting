@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    private AudioSource audio;
+    private AudioSource CarAudio;
     float speed = 0;
     Vector2 startPos;
     Vector2 endPos;
 
     private void Awake()
     {
-        audio = GetComponent<AudioSource>();
+        CarAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -26,15 +26,15 @@ public class CarController : MonoBehaviour
 
             this.speed = swipeLength / 500.0f;
 
-            if (!audio.isPlaying)
+            if (!CarAudio.isPlaying)
             {
-                audio.Play();
+                CarAudio.Play();
             }
 
             else
             {
-                audio.Stop();
-                audio.Play();
+                CarAudio.Stop();
+                CarAudio.Play();
             }
         }
 
